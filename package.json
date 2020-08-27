@@ -1,0 +1,89 @@
+{
+  "author": "Anton Trofimenko",
+  "bugs": {
+    "url": "https://github.com/r37r0m0d3l/translit-ed/issues"
+  },
+  "contributors": [
+    {
+      "email": "r37r0m0d3l@protonmail.com",
+      "name": "Anton Trofimenko"
+    }
+  ],
+  "dependencies": {},
+  "description": "Aggregator of various Cyrillic transliteration methods.",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/plugin-proposal-private-methods": "7.10.4",
+    "@babel/preset-env": "7.11.0",
+    "@r37r0m0d3l/rollup-config-pkg": "git+https://github.com/r37r0m0d3l/rollup-config-pkg.git",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.7.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-jsdoc": "30.3.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "jest": "26.4.2",
+    "npm-check": "5.9.2",
+    "prettier": "2.1.1",
+    "rollup": "2.26.6"
+  },
+  "engines": {
+    "node": ">=12.9.0"
+  },
+  "engineStrict": false,
+  "exports": {
+    ".": {
+      "browser": {
+        "import": "./dist/translit-ed.mjs",
+        "require": "./dist/translit-ed.cjs"
+      },
+      "node": {
+        "import": "./dist/translit-ed.mjs",
+        "require": "./dist/translit-ed.cjs"
+      },
+      "import": "./dist/translit-ed.mjs",
+      "require": "./dist/translit-ed.cjs",
+      "default": "./dist/translit-ed.js"
+    }
+  },
+  "files": [
+    "dist/translit-ed.cjs",
+    "dist/translit-ed.cjs.map",
+    "dist/translit-ed.d.ts",
+    "dist/translit-ed.js",
+    "dist/translit-ed.js.map",
+    "dist/translit-ed.mjs",
+    "dist/translit-ed.mjs.map"
+  ],
+  "homepage": "https://github.com/r37r0m0d3l/translit-ed#readme",
+  "keywords": [
+    "ascii",
+    "cyr2lat",
+    "cyrillic",
+    "romanization",
+    "translit",
+    "transliterate",
+    "transliteration",
+    "unicode",
+    "транслит",
+    "транслитерация"
+  ],
+  "license": "MIT",
+  "main": "./dist/translit-ed.cjs",
+  "module": "./dist/translit-ed.mjs",
+  "name": "translit-ed",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r37r0m0d3l/translit-ed.git"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.config.mjs",
+    "lint": "eslint ./src/**/*.js",
+    "lint:md": "remark .",
+    "package:upgrade": "npm-check --update",
+    "test": "jest",
+    "test:coverage": "jest --collect-coverage"
+  },
+  "type": "module",
+  "types": "./dist/translit-ed.d.ts",
+  "version": "0.0.1"
+}
