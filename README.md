@@ -38,7 +38,7 @@ import {
 
 <!-- Badges -->
 
-[npm-downloads-img]: https://badgen.net/npm/dt/translit-ed?&icon=terminal&label=downloads&color=009688
+[npm-downloads-img]: https://badgen.net/npm/dt/translit%2Ded?&icon=terminal&label=downloads&color=009688
 [npm-downloads-url]: https://npmjs.com/package/translit-ed
 [npm-version-img]: https://badgen.net/npm/v/translit-ed?&icon=npm&label=npm&color=DD3636
 [npm-version-url]: https://npmjs.com/package/translit-ed
