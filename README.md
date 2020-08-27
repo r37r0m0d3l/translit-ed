@@ -43,4 +43,4 @@ import {
 [npm-version-img]: https://badgen.net/npm/v/translit-ed?&icon=npm&label=npm&color=DD3636
 [npm-version-url]: https://npmjs.com/package/translit-ed
 [ts-img]: https://badgen.net/npm/types/translit-ed?&icon=typescript&label=types&color=1E90FF
-[ts-url]: https://github.com/translit-ed/blob/master/dist/index.d.ts
+[ts-url]: https://github.com/translit-ed/blob/master/dist/translit-ed.d.ts
