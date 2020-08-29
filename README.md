@@ -18,15 +18,54 @@ Aggregator of various Cyrillic transliteration methods.
 
 ```javascript
 import {
-  cyrillicRussianToLatin,
-  cyrillicToLatinQuick,
-  cyrillicToLatinUnicode,
-  cyrillicUkrainianToLatin,
-  latinToCyrillicToRussian,
-  latinToCyrillicUkrainian,
-  latinToCyrillicUnicode,
+    cyrillicRussianToLatin,
+    cyrillicToLatinQuick,
+    cyrillicToLatinUnicode,
+    cyrillicUkrainianToLatin,
+    latinToCyrillicRussian,
+    latinToCyrillicUkrainian,
+    latinToCyrillicUnicode,
+    translit,
+    translitRu,
+    translitUCS,
+    translitUk,
+    unTranslitRu,
+    unTranslitUCS,
+    unTranslitUk,
 } from "translit-ed";
 ```
+
+🇷🇺 Russian `Привет Мир!`
+
+```javascript
+cyrillicRussianToLatin("Привет Мир!") // Privet Mir!
+cyrillicToLatinQuick("Привет Мир!") // Privet Mir!
+cyrillicToLatinUnicode("Привет Мир!") // Privet Mir!
+cyrillicUkrainianToLatin("Привет Мир!") // Pryvet Myr!
+```
+
+🇺🇦 Ukrainian `Привіт Світ!`
+
+```javascript
+cyrillicRussianToLatin("Привіт Світ!") // Privіt Svіt!
+cyrillicToLatinQuick("Привіт Світ!") // Privіt Svіt!
+cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
+cyrillicUkrainianToLatin("Привіт Світ!") // Privіt Svіt!
+```
+
+`cyrillicRussianToLatin`   ↔️`translitRu`
+
+`cyrillicToLatinQuick`     ↔️`translit`
+
+`cyrillicToLatinUnicode`   ↔️`translitUCS`
+
+`cyrillicUkrainianToLatin` ↔️`translitUk`
+
+`latinToCyrillicRussian`   ↔️`unTranslitRu`
+
+`latinToCyrillicUkrainian` ↔️`unTranslitUk`
+
+`latinToCyrillicUnicode`   ↔️`unTranslitUCS`
 
 ---
 
