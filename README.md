@@ -67,7 +67,7 @@ cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
 
 ## 💡️ Functions
 
-| Explanatory name  	| Alias to  	| Short name  	|
+| Explanatory name  	| Alias   	| Short name  	|
 |---	|---	|---	|
 | `cyrillicRussianToLatin`  	| ↔️  	| `translitRu`  	|
 | `cyrillicToLatinQuick`  	| ↔️  	| `translit`  	|
