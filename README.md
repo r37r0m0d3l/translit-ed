@@ -14,7 +14,7 @@
 
 ---
 
-## Usage
+## 💬 Usage
 
 ```javascript
 import {
@@ -37,7 +37,7 @@ import {
 
 ---
 
-## Examples
+## 👀 Examples
 
 🇷🇺 Russian `Привет Мир!`
 
@@ -65,6 +65,8 @@ cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
 
 ---
 
+## 💡️ Functions
+
 | Explanatory name  	| Alias to  	| Short name  	|
 |---	|---	|---	|
 | `cyrillicRussianToLatin`  	| ↔️  	| `translitRu`  	|
@@ -77,7 +79,7 @@ cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
 
 ---
 
-## See also
+## 🗺️ See also
 
 [My other projects](https://r37r0m0d3l.icu/open_source_map)
 
