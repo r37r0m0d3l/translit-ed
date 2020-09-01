@@ -2,7 +2,7 @@
 
 # Translit-Ed
 
-🇷🇺 🇺🇦 🇧🇾 🡆 🔠 Aggregator of various Cyrillic transliteration methods.
+🇧🇾 🇷🇺 🇺🇦 ➡️🔠 Aggregator of various Cyrillic transliteration methods.
 
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]
@@ -18,20 +18,26 @@
 
 ```javascript
 import {
-    cyrillicRussianToLatin,
-    cyrillicToLatinQuick,
-    cyrillicToLatinUnicode,
-    cyrillicUkrainianToLatin,
-    latinToCyrillicRussian,
-    latinToCyrillicUkrainian,
-    latinToCyrillicUnicode,
-    translit,
-    translitRu,
-    translitUCS,
-    translitUk,
-    unTranslitRu,
-    unTranslitUCS,
-    unTranslitUk,
+  cyrillicBelarusianToLatin,
+  cyrillicRussianToLatin,
+  cyrillicToLatinQuick,
+  cyrillicToLatinUnicode,
+  cyrillicUkrainianToLatin,
+} from "translit-ed";
+
+import {
+  latinToCyrillicBelarusian,
+  latinToCyrillicRussian,
+  latinToCyrillicUkrainian,
+  latinToCyrillicUnicode,
+} from "translit-ed";
+
+import {
+  translit, translitBe, translitRu, translitUCS, translitUk,
+} from "translit-ed";
+
+import {
+  unTranslitBe, unTranslitRu, unTranslitUCS, unTranslitUk,
 } from "translit-ed";
 ```
 
@@ -69,10 +75,12 @@ cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
 
 | Explanatory name  	| Alias   	| Short name  	|
 |---	|---	|---	|
+| `cyrillicBelarusianToLatin`  	| ↔️  	| `translitBe`  	|
 | `cyrillicRussianToLatin`  	| ↔️  	| `translitRu`  	|
 | `cyrillicToLatinQuick`  	| ↔️  	| `translit`  	|
 | `cyrillicToLatinUnicode`  	| ↔️  	| `translitUCS`  	|
 | `cyrillicUkrainianToLatin`  	| ↔️  	| `translitUk`  	|
+| `latinToCyrillicBelarusian`  	| ↔️  	|`unTranslitBe`   	|
 | `latinToCyrillicRussian`  	| ↔️  	|`unTranslitRu`   	|
 | `latinToCyrillicUkrainian`  	| ↔️  	| `unTranslitUk`  	|
 | `latinToCyrillicUnicode`  	| ↔️  	| `unTranslitUCS`  	|

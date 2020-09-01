@@ -3,6 +3,32 @@ import { cyrillicToLatin } from "./jarolit/cyrillicToLatin.js";
 import { cyrillicToLatinSimple } from "./quick/cyrillicToLatin.js";
 import { latinToCyrillic } from "./jarolit/latinToCyrillic.js";
 
+//---
+
+/**
+ * @name cyrillicBelarusianToLatin
+ * @alias translitBe
+ * @description Convert Cyrillic⟶Latin text using Belarusian flavour
+ * @param {string} cyrillicText
+ * @returns {string}
+ */
+export function cyrillicBelarusianToLatin(cyrillicText) {
+  return CyrillicToLatinUnsafe({ preset: "ru" }).transform(cyrillicText);
+}
+
+/**
+ * @name translitBe
+ * @alias cyrillicBelarusianToLatin
+ * @description Convert Cyrillic⟶Latin text using Belarusian flavour
+ * @param {string} cyrillicText
+ * @returns {string}
+ */
+export function translitBe(cyrillicText) {
+  return CyrillicToLatinUnsafe({ preset: "ru" }).transform(cyrillicText);
+}
+
+//---
+
 /**
  * @name cyrillicRussianToLatin
  * @alias translitRu
@@ -95,6 +121,30 @@ export function cyrillicUkrainianToLatin(cyrillicText) {
  */
 export function translitUk(cyrillicText) {
   return CyrillicToLatinUnsafe({ preset: "uk" }).transform(cyrillicText);
+}
+
+//---
+
+/**
+ * @name latinToCyrillicBelarusian
+ * @alias unTranslitBe
+ * @description Convert Latin⟶Cyrillic text using Belarusian flavour
+ * @param {string} latinText
+ * @returns {string}
+ */
+export function latinToCyrillicBelarusian(latinText) {
+  return CyrillicToLatinUnsafe({ preset: "ru" }).reverse(latinText);
+}
+
+/**
+ * @name unTranslitBe
+ * @alias latinToCyrillicBelarusian
+ * @description Convert Latin⟶Cyrillic text using Belarusian flavour
+ * @param {string} latinText
+ * @returns {string}
+ */
+export function unTranslitBe(latinText) {
+  return CyrillicToLatinUnsafe({ preset: "ru" }).reverse(latinText);
 }
 
 //---

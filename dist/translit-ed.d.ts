@@ -1,4 +1,24 @@
 /**
+ * @name cyrillicBelarusianToLatin
+ * @alias translitBe
+ * @description Convert Cyrillic⟶Latin text using Belarusian flavour
+ * @param {string} cyrillicText
+ * @returns {string}
+ */
+export declare function cyrillicBelarusianToLatin(cyrillicText: string): string;
+
+/**
+ * @name translitBe
+ * @alias cyrillicBelarusianToLatin
+ * @description Convert Cyrillic⟶Latin text using Belarusian flavour
+ * @param {string} cyrillicText
+ * @returns {string}
+ */
+export declare function translitBe(cyrillicText: string): string;
+
+//---
+
+/**
  * @name cyrillicRussianToLatin
  * @alias translitRu
  * @description Convert Cyrillic⟶Latin text using Russian flavour
@@ -75,6 +95,26 @@ export declare function cyrillicUkrainianToLatin(cyrillicText: string): string;
  * @returns {string}
  */
 export declare function translitUk(cyrillicText: string): string;
+
+//---
+
+/**
+ * @name latinToCyrillicBelarusian
+ * @alias unTranslitBe
+ * @description Convert Latin⟶Cyrillic text using Belarusian flavour
+ * @param {string} latinText
+ * @returns {string}
+ */
+export declare function latinToCyrillicBelarusian(latinText: string): string;
+
+/**
+ * @name unTranslitBe
+ * @alias latinToCyrillicBelarusian
+ * @description Convert Latin⟶Cyrillic text using Belarusian flavour
+ * @param {string} latinText
+ * @returns {string}
+ */
+export declare function unTranslitBe(latinText: string): string;
 
 //---
 

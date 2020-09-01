@@ -85,5 +85,5 @@
   },
   "type": "module",
   "types": "./dist/translit-ed.d.ts",
-  "version": "0.0.6"
+  "version": "0.0.7"
 }
