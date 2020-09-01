@@ -10,11 +10,11 @@
     }
   ],
   "dependencies": {},
-  "description": "Aggregator of various Cyrillic transliteration methods.",
+  "description": "\uD83C\uDDF7\uD83C\uDDFA \uD83C\uDDFA\uD83C\uDDE6 \uD83C\uDDE7\uD83C\uDDFE \uD83E\uDC46 \uD83D\uDD20 Aggregator of various Cyrillic transliteration methods.",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-proposal-private-methods": "7.10.4",
-    "@babel/preset-env": "7.11.0",
+    "@babel/preset-env": "7.11.5",
     "@r37r0m0d3l/rollup-config-pkg": "git+https://github.com/r37r0m0d3l/rollup-config-pkg.git",
     "babel-eslint": "10.1.0",
     "eslint": "7.7.0",
@@ -24,7 +24,7 @@
     "jest": "26.4.2",
     "npm-check": "5.9.2",
     "prettier": "2.1.1",
-    "rollup": "2.26.8"
+    "rollup": "2.26.9"
   },
   "engines": {
     "node": ">=12.9.0"
@@ -85,5 +85,5 @@
   },
   "type": "module",
   "types": "./dist/translit-ed.d.ts",
-  "version": "0.0.4"
+  "version": "0.0.5"
 }

@@ -2,7 +2,7 @@
 
 # Translit-Ed
 
-Aggregator of various Cyrillic transliteration methods.
+🇷🇺 🇺🇦 🇧🇾 🡆 🔠 Aggregator of various Cyrillic transliteration methods.
 
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]
@@ -35,37 +35,45 @@ import {
 } from "translit-ed";
 ```
 
+---
+
+## Examples
+
 🇷🇺 Russian `Привет Мир!`
 
 ```javascript
-cyrillicRussianToLatin("Привет Мир!") // Privet Mir!
 cyrillicToLatinQuick("Привет Мир!") // Privet Mir!
+cyrillicRussianToLatin("Привет Мир!") // Privet Mir!
 cyrillicToLatinUnicode("Привет Мир!") // Privet Mir!
-cyrillicUkrainianToLatin("Привет Мир!") // Pryvet Myr!
+```
+
+🇧🇾 Belarusian `Прывітанне Сусвет!`
+
+```javascript
+cyrillicToLatinQuick("Прывітанне Сусвет!") // Privіtanne Susvet!
+cyrillicRussianToLatin("Прывітанне Сусвет!") // Privіtanne Susvet!
+cyrillicToLatinUnicode("Прывітанне Сусвет!") // Pryvxu456xtanne Susvet!
 ```
 
 🇺🇦 Ukrainian `Привіт Світ!`
 
 ```javascript
-cyrillicRussianToLatin("Привіт Світ!") // Privіt Svіt!
 cyrillicToLatinQuick("Привіт Світ!") // Privіt Svіt!
-cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
 cyrillicUkrainianToLatin("Привіт Світ!") // Privіt Svіt!
+cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
 ```
 
-`cyrillicRussianToLatin`   ↔️`translitRu`
+---
 
-`cyrillicToLatinQuick`     ↔️`translit`
-
-`cyrillicToLatinUnicode`   ↔️`translitUCS`
-
-`cyrillicUkrainianToLatin` ↔️`translitUk`
-
-`latinToCyrillicRussian`   ↔️`unTranslitRu`
-
-`latinToCyrillicUkrainian` ↔️`unTranslitUk`
-
-`latinToCyrillicUnicode`   ↔️`unTranslitUCS`
+| Explanatory name  	| Alias to  	| Short name  	|
+|---	|---	|---	|
+| `cyrillicRussianToLatin`  	| ↔️  	| `translitRu`  	|
+| `cyrillicToLatinQuick`  	| ↔️  	| `translit`  	|
+| `cyrillicToLatinUnicode`  	| ↔️  	| `translitUCS`  	|
+| `cyrillicUkrainianToLatin`  	| ↔️  	| `translitUk`  	|
+| `latinToCyrillicRussian`  	| ↔️  	|`unTranslitRu`   	|
+| `latinToCyrillicUkrainian`  	| ↔️  	| `unTranslitUk`  	|
+| `latinToCyrillicUnicode`  	| ↔️  	| `unTranslitUCS`  	|
 
 ---
 
