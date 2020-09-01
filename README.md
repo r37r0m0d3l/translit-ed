@@ -2,7 +2,9 @@
 
 # Translit-Ed
 
-🇧🇾 🇷🇺 🇺🇦 ➡️🔠 Aggregator of various Cyrillic transliteration methods.
+🇧🇾 🇷🇺 🇺🇦 ➡️🔠
+
+Aggregator of various Cyrillic transliteration methods.
 
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]
