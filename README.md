@@ -2,19 +2,13 @@
 
 # Translit-Ed
 
-🇧🇾 🇷🇺 🇺🇦 ➡️🔠
+🇧🇾 🇷🇺 🇺🇦
 
 Aggregator of various Cyrillic transliteration methods.
 
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 [![TypeScript Typings][ts-img]][ts-url]
-
----
-
-> ⏳ **Please Note:** This is "Work In Progress" package. The new functionality will be added very slowly.
-
----
 
 ## 💬 Usage
 
@@ -47,6 +41,14 @@ import {
 
 ## 👀 Examples
 
+🇧🇾 Belarusian `Прывітанне Сусвет!`
+
+```javascript
+cyrillicToLatinQuick("Прывітанне Сусвет!") // Pryvіtanne Susvet!
+cyrillicRussianToLatin("Прывітанне Сусвет!") // Privіtanne Susvet!
+cyrillicToLatinUnicode("Прывітанне Сусвет!") // Pryvxu456xtanne Susvet!
+```
+
 🇷🇺 Russian `Привет Мир!`
 
 ```javascript
@@ -55,19 +57,11 @@ cyrillicRussianToLatin("Привет Мир!") // Privet Mir!
 cyrillicToLatinUnicode("Привет Мир!") // Privet Mir!
 ```
 
-🇧🇾 Belarusian `Прывітанне Сусвет!`
-
-```javascript
-cyrillicToLatinQuick("Прывітанне Сусвет!") // Privіtanne Susvet!
-cyrillicRussianToLatin("Прывітанне Сусвет!") // Privіtanne Susvet!
-cyrillicToLatinUnicode("Прывітанне Сусвет!") // Pryvxu456xtanne Susvet!
-```
-
 🇺🇦 Ukrainian `Привіт Світ!`
 
 ```javascript
 cyrillicToLatinQuick("Привіт Світ!") // Privіt Svіt!
-cyrillicUkrainianToLatin("Привіт Світ!") // Privіt Svіt!
+cyrillicUkrainianToLatin("Привіт Світ!") // Pryvit Svit!
 cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
 ```
 

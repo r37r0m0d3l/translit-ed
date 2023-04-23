@@ -1,29 +1,26 @@
 {
-  "author": "Anton Trofimenko",
+  "author": "Anton Trofymenko",
   "bugs": {
     "url": "https://github.com/r37r0m0d3l/translit-ed/issues"
   },
   "contributors": [
     {
       "email": "r37r0m0d3l@protonmail.com",
-      "name": "Anton Trofimenko"
+      "name": "Anton Trofymenko"
     }
   ],
-  "dependencies": {},
-  "description": "\uD83C\uDDF7\uD83C\uDDFA \uD83C\uDDFA\uD83C\uDDE6 \uD83C\uDDE7\uD83C\uDDFE \uD83E\uDC46 \uD83D\uDD20 Aggregator of various Cyrillic transliteration methods.",
+  "description": "🇧🇾 🇷🇺 🇺🇦 Aggregator of various Cyrillic transliteration methods.",
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "7.10.4",
-    "@babel/plugin-proposal-private-methods": "7.10.4",
-    "@babel/preset-env": "7.11.5",
+    "@babel/plugin-proposal-class-properties": "7.18.6",
+    "@babel/plugin-proposal-private-methods": "7.18.6",
+    "@babel/preset-env": "7.21.4",
     "@r37r0m0d3l/rollup-config-pkg": "git+https://github.com/r37r0m0d3l/rollup-config-pkg.git",
     "babel-eslint": "10.1.0",
-    "eslint": "7.7.0",
-    "eslint-config-prettier": "6.11.0",
-    "eslint-plugin-jsdoc": "30.3.0",
-    "eslint-plugin-prettier": "3.1.4",
-    "jest": "26.4.2",
-    "npm-check": "5.9.2",
-    "prettier": "2.1.1",
+    "eslint": "8.39.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-jsdoc": "43.0.7",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.8.7",
     "rollup": "2.26.9"
   },
   "engines": {
@@ -78,12 +75,12 @@
   "scripts": {
     "build": "rollup --config rollup.config.mjs",
     "lint": "eslint ./src/**/*.js",
-    "lint:md": "remark .",
-    "package:upgrade": "npm-check --update",
-    "test": "jest",
-    "test:coverage": "jest --collect-coverage"
+    "package:upgrade": "npx npm-check --update",
+    "test": "npm run test:cjs && npm run test:mjs",
+    "test:cjs": "node --test ./test/index.test.cjs",
+    "test:mjs": "node --test ./test/index.test.mjs"
   },
   "type": "module",
   "types": "./dist/translit-ed.d.ts",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

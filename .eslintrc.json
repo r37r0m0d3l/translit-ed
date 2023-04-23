@@ -7,7 +7,6 @@
   },
   "extends": ["plugin:prettier/recommended", "eslint:recommended"],
   "globals": {},
-  "parser": "babel-eslint",
   "parserOptions": {
     "allowImportExportEverywhere": true,
     "ecmaVersion": 2018,
