@@ -9,53 +9,48 @@
       "name": "Anton Trofymenko"
     }
   ],
-  "description": "🇧🇾 🇷🇺 🇺🇦 Aggregator of various Cyrillic transliteration methods.",
+  "description": "🇧🇾 🇧🇬 🇰🇿 🇲🇰 🇲🇳 🇷🇺 🇷🇸 🇺🇦 🇺🇿 Aggregator of various Cyrillic transliteration methods.",
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "7.18.6",
-    "@babel/plugin-proposal-private-methods": "7.18.6",
-    "@babel/preset-env": "7.21.4",
-    "@r37r0m0d3l/rollup-config-pkg": "git+https://github.com/r37r0m0d3l/rollup-config-pkg.git",
-    "babel-eslint": "10.1.0",
-    "eslint": "8.39.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-jsdoc": "43.0.7",
-    "eslint-plugin-prettier": "4.2.1",
-    "prettier": "2.8.7",
-    "rollup": "2.26.9"
+    "prettier": "^3.8.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=12.9.0"
+    "node": ">=22.18.0",
+    "npm": ">=8.12.0"
   },
-  "engineStrict": false,
+  "engineStrict": true,
   "exports": {
     ".": {
+      "import": "./dist/translit-ed.js",
       "browser": {
-        "import": "./dist/translit-ed.mjs",
-        "require": "./dist/translit-ed.cjs"
+        "import": "./dist/translit-ed.js"
       },
       "node": {
-        "import": "./dist/translit-ed.mjs",
-        "require": "./dist/translit-ed.cjs"
+        "import": "./dist/translit-ed.js"
       },
-      "import": "./dist/translit-ed.mjs",
-      "require": "./dist/translit-ed.cjs",
       "default": "./dist/translit-ed.js"
     }
   },
   "files": [
-    "dist/translit-ed.cjs",
-    "dist/translit-ed.cjs.map",
     "dist/translit-ed.d.ts",
     "dist/translit-ed.js",
-    "dist/translit-ed.js.map",
-    "dist/translit-ed.mjs",
-    "dist/translit-ed.mjs.map"
+    "dist/translit-ed.js.map"
   ],
   "homepage": "https://github.com/r37r0m0d3l/translit-ed#readme",
   "keywords": [
     "ascii",
+    "belarusian",
+    "bulgarian",
     "cyr2lat",
     "cyrillic",
+    "kazakh",
+    "macedonian",
+    "mongolian",
+    "russian",
+    "serbian",
+    "ukrainian",
+    "uzbek",
     "romanization",
     "translit",
     "transliterate",
@@ -65,22 +60,21 @@
     "транслитерация"
   ],
   "license": "MIT",
-  "main": "./dist/translit-ed.cjs",
-  "module": "./dist/translit-ed.mjs",
+  "main": "./dist/translit-ed.js",
+  "module": "./dist/translit-ed.js",
   "name": "translit-ed",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/r37r0m0d3l/translit-ed.git"
   },
   "scripts": {
-    "build": "rollup --config rollup.config.mjs",
-    "lint": "eslint ./src/**/*.js",
+    "build": "tsup src/index.ts --format esm --dts --sourcemap --clean --minify --treeshake --entry.translit-ed src/index.ts",
+    "dev": "tsup src/index.ts --format esm --watch --dts",
     "package:upgrade": "npx npm-check --update",
-    "test": "npm run test:cjs && npm run test:mjs",
-    "test:cjs": "node --test ./test/index.test.cjs",
-    "test:mjs": "node --test ./test/index.test.mjs"
+    "prepublishOnly": "npm run build",
+    "test": "node --test ./test/index.test.js"
   },
   "type": "module",
   "types": "./dist/translit-ed.d.ts",
-  "version": "1.0.1"
+  "version": "2.0.0"
 }

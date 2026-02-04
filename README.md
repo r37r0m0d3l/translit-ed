@@ -2,92 +2,156 @@
 
 # Translit-Ed
 
-🇧🇾 🇷🇺 🇺🇦
-
-Aggregator of various Cyrillic transliteration methods.
-
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 [![TypeScript Typings][ts-img]][ts-url]
 
-## 💬 Usage
+This package provides **language-aware, standard-based transliteration** for Cyrillic scripts:
+
+|                 |                 |                |
+|-----------------|-----------------|----------------|
+| 🇧🇾 Belarusian | 🇲🇰 Macedonian | 🇷🇸 Serbian   |
+| 🇧🇬 Bulgarian  | 🇲🇳 Mongolian  | 🇺🇦 Ukrainian |
+| 🇰🇿 Kazakh     | 🇷🇺 Russian    | 🇺🇿 Uzbek     |
+
+## 🚀 Installation
+
+```bash
+npm install translit-ed
+```
+
+## 🛠️ Usage
 
 ```javascript
 import {
-  cyrillicBelarusianToLatin,
-  cyrillicRussianToLatin,
-  cyrillicToLatinQuick,
+  cyrillicBelarusianToLatin, cyrillicBulgarianToLatin, cyrillicKazakhToLatin,
+  cyrillicMacedonianToLatin, cyrillicMongolianToLatin, cyrillicRussianToLatin,
+  cyrillicSerbianToLatin, cyrillicUkrainianToLatin, cyrillicUzbekToLatin,
   cyrillicToLatinUnicode,
-  cyrillicUkrainianToLatin,
 } from "translit-ed";
 
 import {
-  latinToCyrillicBelarusian,
-  latinToCyrillicRussian,
-  latinToCyrillicUkrainian,
+  latinToCyrillicBelarusian, latinToCyrillicBulgarian, latinToCyrillicKazakh,
+  latinToCyrillicMacedonian, latinToCyrillicMongolian, latinToCyrillicRussian,
+  latinToCyrillicSerbian, latinToCyrillicUkrainian, latinToCyrillicUzbek,
   latinToCyrillicUnicode,
-} from "translit-ed";
-
-import {
-  translit, translitBe, translitRu, translitUCS, translitUk,
-} from "translit-ed";
-
-import {
-  unTranslitBe, unTranslitRu, unTranslitUCS, unTranslitUk,
 } from "translit-ed";
 ```
 
 ---
 
-## 👀 Examples
+## 🏗️ Examples
 
-🇧🇾 Belarusian `Прывітанне Сусвет!`
+🇧🇾 Belarusian (Cyrillic, national standard)
 
 ```javascript
-cyrillicToLatinQuick("Прывітанне Сусвет!") // Pryvіtanne Susvet!
-cyrillicRussianToLatin("Прывітанне Сусвет!") // Privіtanne Susvet!
-cyrillicToLatinUnicode("Прывітанне Сусвет!") // Pryvxu456xtanne Susvet!
+cyrillicBelarusianToLatin("Я і Юра ў Мінску.")
+// Ja i Jura ŭ Minsku.
+latinToCyrillicBelarusian("Ja i Jura ŭ Minsku.")
+// Я і Юра ў Мінску.
 ```
 
-🇷🇺 Russian `Привет Мир!`
+🇧🇬 Bulgarian (Cyrillic, BGN/PCGN 2013)
 
 ```javascript
-cyrillicToLatinQuick("Привет Мир!") // Privet Mir!
-cyrillicRussianToLatin("Привет Мир!") // Privet Mir!
-cyrillicToLatinUnicode("Привет Мир!") // Privet Mir!
+cyrillicBulgarianToLatin("Щъркелът е в ъгъла до гьола.")
+// Shtarkelat e v agala do gyola.
+latinToCyrillicBulgarian("Shtastie e v gyola.")
+// Щастие е в гьола.
 ```
 
-🇺🇦 Ukrainian `Привіт Світ!`
+🇰🇿 Kazakh (Cyrillic, BGN/PCGN 1979)
 
 ```javascript
-cyrillicToLatinQuick("Привіт Світ!") // Privіt Svіt!
-cyrillicUkrainianToLatin("Привіт Світ!") // Pryvit Svit!
-cyrillicToLatinUnicode("Привіт Світ!") // Privxu456xt Svxu456xt!
+cyrillicKazakhToLatin("Әңгіме ғұрыппен қоңыр өгіз ұйықтап, үнімен һау деді.")
+// Änggime ghuryppen qongyr ögiz uyyqtap, ünimen haū dedi.
+```
+
+🇲🇰 Macedonian (Cyrillic, national standard)
+
+```javascript
+cyrillicMacedonianToLatin("Ѓорѓи џвака ќебап со ѕвезда.")
+// Gjorgji džvaka kjebap so dzvezda.
+latinToCyrillicMacedonian("Kjutiot gjavol svira džez.")
+// Ќутиот ѓавол свира џез.
+```
+
+🇲🇳 Mongolian (Cyrillic, national standard)
+
+```javascript
+cyrillicMongolianToLatin("Өндөр уул, үүлтэй өдөр.")
+// Öndör uul, üültey ödör.
+latinToCyrillicMongolian("Öndör üültey ödör.")
+// Өндөр үүлтей өдөр.
+```
+
+🇷🇺 Russian (Cyrillic, national standard)
+
+```javascript
+cyrillicRussianToLatin("Съешь же ещё этих мягких французских булок, да выпей чаю.")
+// S"yesh' zhe yeshchyo etikh myagkikh frantsuzskikh bulok, da vypey chayu.
+latinToCyrillicRussian("S\"yesh' zhe yeshchyo etikh myagkikh frantsuzskikh bulok, da vypey chayu.")
+// Съешь же ещё этих мягких французских булок, да выпей чаю.
+```
+
+🇷🇸 Serbian (Cyrillic, national standard)
+
+```javascript
+cyrillicSerbianToLatin("Љубав и џез.")
+// Ljubav i džez.
+latinToCyrillicSerbian("Njegova džez ploča.")
+// Његова џез плоча.
+```
+
+🇺🇦 Ukrainian (Cyrillic, national standard)
+
+```javascript
+cyrillicUkrainianToLatin("Є юний їжак, ґудзик і гілка в яру.")
+// Ye yunyi yizhak, gudzyk i hilka v yaru.
+latinToCyrillicUkrainian("Ye yunyi yizhak, gudzyk i hilka v yaru.")
+// Є юний їжак, ґудзик і гілка в яру.
+```
+
+🇺🇿 Uzbek (Cyrillic, national standard)
+
+```javascript
+cyrillicUzbekToLatin("Ўзбекистонда қўшиқ ва ғазал.")
+// O'zbekistonda qo'shiq va g'azal.
+latinToCyrillicUzbek("G'oz va o'zbekcha so'z.")
+// Ғоз ва ўзбекча сўз.
 ```
 
 ---
 
 ## 💡️ Functions
 
-| Explanatory name  	| Alias   	| Short name  	|
-|---	|---	|---	|
-| `cyrillicBelarusianToLatin`  	| ↔️  	| `translitBe`  	|
-| `cyrillicRussianToLatin`  	| ↔️  	| `translitRu`  	|
-| `cyrillicToLatinQuick`  	| ↔️  	| `translit`  	|
-| `cyrillicToLatinUnicode`  	| ↔️  	| `translitUCS`  	|
-| `cyrillicUkrainianToLatin`  	| ↔️  	| `translitUk`  	|
-| `latinToCyrillicBelarusian`  	| ↔️  	|`unTranslitBe`   	|
-| `latinToCyrillicRussian`  	| ↔️  	|`unTranslitRu`   	|
-| `latinToCyrillicUkrainian`  	| ↔️  	| `unTranslitUk`  	|
-| `latinToCyrillicUnicode`  	| ↔️  	| `unTranslitUCS`  	|
+| From  	                        | •    | To                          |
+|--------------------------------|------|-----------------------------|
+| `cyrillicBelarusianToLatin`  	 | 🇧🇾 | `latinToCyrillicBelarusian` |
+| `cyrillicBulgarianToLatin`     | 🇧🇬 | `latinToCyrillicBulgarian`  |
+| `cyrillicKazakhToLatin`        | 🇰🇿 | `latinToCyrillicKazakh`     |
+| `cyrillicMacedonianToLatin`    | 🇲🇰 | `latinToCyrillicMacedonian` |
+| `cyrillicMongolianToLatin`     | 🇲🇳 | `latinToCyrillicMongolian`  |
+| `cyrillicRussianToLatin`       | 🇷🇺 | `latinToCyrillicRussian`    |
+| `cyrillicSerbianToLatin`       | 🇷🇸 | `latinToCyrillicSerbian`    |
+| `cyrillicUkrainianToLatin`     | 🇺🇦 | `latinToCyrillicUkrainian`  | 
+| `cyrillicUzbekToLatin`         | 🇺🇿 | `latinToCyrillicUzbek`      |
+| `cyrillicToLatinUnicode`       | 🌐   | `latinToCyrillicUnicode`    |
 
----
+## 📄 License
 
-## 🗺️ See also
+[MIT](https://choosealicense.com/licenses/mit/)
 
-[My other projects](https://r37r0m0d3l.icu/open_source_map)
+[//]: # (---)
 
-<img src="https://raw.githubusercontent.com/r37r0m0d3l/r37r0m0d3l/master/osmap.svg?sanitize=true" width="960" height="520" style="display:block;height:auto;margin-left:auto;margin-right:auto;min-height:520px;min-width:960px;width:100%;">
+[//]: # ()
+[//]: # (## 🗺️ See also)
+
+[//]: # ()
+[//]: # ([My other projects]&#40;https://r37r0m0d3l.icu/open_source_map&#41;)
+
+[//]: # ()
+[//]: # (<img src="https://raw.githubusercontent.com/r37r0m0d3l/r37r0m0d3l/master/osmap.svg?sanitize=true" width="960" height="520" style="display:block;height:auto;margin-left:auto;margin-right:auto;min-height:520px;min-width:960px;width:100%;">)
 
 <!-- Badges -->
 

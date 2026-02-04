@@ -1,0 +1,26 @@
+# translit-ed
+
+> Aggregator of various Cyrillic transliteration methods for 🇧🇾 🇧🇬 🇰🇿 🇲🇰 🇲🇳 🇷🇺 🇷🇸 🇺🇦 🇺🇿.
+
+Language-aware, standard-based transliteration library for Cyrillic scripts. Supports national standards and BGN/PCGN for accurate bidirectional conversion. Ideal for SEO-friendly URLs, data normalization, and recovery of original Cyrillic text from transliterated forms.
+
+## Docs
+
+- [README](https://github.com/r37r0m0d3l/translit-ed#readme): Comprehensive guide on installation, usage, and supported standards.
+- [NPM](https://www.npmjs.com/package/translit-ed): Package registry page for versioning and dependency info.
+
+## API
+
+- [Core Functions](https://github.com/r37r0m0d3l/translit-ed/blob/master/src/index.ts): Bidirectional functions for Belarusian, Bulgarian, Kazakh, Macedonian, Mongolian, Russian, Serbian, Ukrainian, and Uzbek.
+- [Generic Unicode Mapping](https://github.com/r37r0m0d3l/translit-ed/blob/master/src/generic/cyrillicToLatin.ts): Fallback transliteration using standard Unicode mappings.
+- [Type Definitions](https://github.com/r37r0m0d3l/translit-ed/blob/master/dist/translit-ed.d.ts): TypeScript declarations for all exported functions.
+
+## Examples
+
+- [Usage Samples](https://github.com/r37r0m0d3l/translit-ed#%EF%B8%8F-examples): Practical code snippets demonstrating how to use the library for different languages.
+
+## Optional
+
+- [CHANGELOG](https://github.com/r37r0m0d3l/translit-ed/blob/master/CHANGELOG.md): History of changes and version updates.
+- [ROADMAP](https://github.com/r37r0m0d3l/translit-ed/blob/master/ROADMAP.md): Planned features and future directions.
+- [LICENSE](https://github.com/r37r0m0d3l/translit-ed/blob/master/LICENSE): MIT License details.
