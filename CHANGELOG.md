@@ -1,5 +1,13 @@
 # 📝 Changelog
 
+[2.0.1]
+
+# ✨ Added
+
+* 🇺🇦 Ukrainian Gajica (Гаєвиця) project support. Previously a library failing hard at two-way lossless conversion.
+
+* ⌨️ Command-line interface (CLI) support. Run `npx translit-ed` to see all available flags.
+
 [2.0.0]
 
 # ⚠️ BREAKING CHANGES

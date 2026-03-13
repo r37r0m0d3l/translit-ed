@@ -24,17 +24,31 @@ npm install translit-ed
 
 ```javascript
 import {
-  cyrillicBelarusianToLatin, cyrillicBulgarianToLatin, cyrillicKazakhToLatin,
-  cyrillicMacedonianToLatin, cyrillicMongolianToLatin, cyrillicRussianToLatin,
-  cyrillicSerbianToLatin, cyrillicUkrainianToLatin, cyrillicUzbekToLatin,
-  cyrillicToLatinUnicode,
+  cyrillicBelarusianToLatin,
+  cyrillicBulgarianToLatin,
+  cyrillicKazakhToLatin,
+  cyrillicMacedonianToLatin,
+  cyrillicMongolianToLatin,
+  cyrillicRussianToLatin,
+  cyrillicSerbianToLatin,
+  cyrillicToLatinUnicode, // Universal transliteration function
+  cyrillicUkrainianToLatin,
+  cyrillicUzbekToLatin,
+  ukrainianCyrillicToLatynka, // Two-way transliteration function
 } from "translit-ed";
 
 import {
-  latinToCyrillicBelarusian, latinToCyrillicBulgarian, latinToCyrillicKazakh,
-  latinToCyrillicMacedonian, latinToCyrillicMongolian, latinToCyrillicRussian,
-  latinToCyrillicSerbian, latinToCyrillicUkrainian, latinToCyrillicUzbek,
-  latinToCyrillicUnicode,
+  latinToCyrillicBelarusian,
+  latinToCyrillicBulgarian,
+  latinToCyrillicKazakh,
+  latinToCyrillicMacedonian,
+  latinToCyrillicMongolian,
+  latinToCyrillicRussian,
+  latinToCyrillicSerbian,
+  latinToCyrillicUkrainian,
+  latinToCyrillicUnicode, // Universal transliteration function
+  latinToCyrillicUzbek,
+  ukrainianLatynkaToCyrillic, // Two-way transliteration function
 } from "translit-ed";
 ```
 
@@ -112,6 +126,17 @@ latinToCyrillicUkrainian("Ye yunyi yizhak, gudzyk i hilka v yaru.")
 // Є юний їжак, ґудзик і гілка в яру.
 ```
 
+🇺🇦 Ukrainian (Cyrillic, Gajica (Гаєвиця) project)
+
+Lossless or "two-way" transliteration – never lose any original characters.
+
+```javascript
+ukrainianCyrillicToLatynka("Є юний їжак, ґудзик і гілка в яру.")
+// "Je junyj jižak, gudzyk i hilka v jaru."
+ukrainianLatynkaToCyrillic("Je junyj jižak, gudzyk i hilka v jaru.")
+// "Є юний їжак, ґудзик і гілка в яру."
+```
+
 🇺🇿 Uzbek (Cyrillic, national standard)
 
 ```javascript
@@ -135,8 +160,26 @@ latinToCyrillicUzbek("G'oz va o'zbekcha so'z.")
 | `cyrillicRussianToLatin`       | 🇷🇺 | `latinToCyrillicRussian`    |
 | `cyrillicSerbianToLatin`       | 🇷🇸 | `latinToCyrillicSerbian`    |
 | `cyrillicUkrainianToLatin`     | 🇺🇦 | `latinToCyrillicUkrainian`  | 
+| `ukrainianCyrillicToLatynka`   | 🇺🇦 | `ukrainianLatynkaToCyrillic`|
 | `cyrillicUzbekToLatin`         | 🇺🇿 | `latinToCyrillicUzbek`      |
 | `cyrillicToLatinUnicode`       | 🌐   | `latinToCyrillicUnicode`    |
+
+## ⌨️ CLI Usage
+
+You can use `translit-ed` via command line with `npx`:
+
+```bash
+npx translit-ed -unicode-cyr2lat "Текст на български"
+# `Tekst na b"lgarski`
+
+npx translit-ed -ru-cyr2lat "Текст на русском"
+# `Tekst na russkom`
+
+npx translit-ed -ua-gajica-cyr2lat "Текст Українською Гаєвиця"
+# `Tekst Ukrajinsjkoju Hajevycja`
+```
+
+Run `npx translit-ed` without arguments to see all available flags.
 
 ## 📄 License
 

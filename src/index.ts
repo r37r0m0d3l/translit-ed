@@ -29,6 +29,10 @@ import {
   latinToCyrillicUkrainian as latinToCyrillicUkrainianImpl,
 } from "./ukrainian/translit.js";
 import {
+  ukrainianCyrillicToLatynka as ukrainianCyrillicToLatynkaImpl,
+  ukrainianLatynkaToCyrillic as ukrainianLatynkaToCyrillicImpl,
+} from "./ukrainian/latynka_gajica.func.js";
+import {
   cyrillicToLatinRussian as cyrillicToLatinRussianImpl,
   latinToCyrillicRussian as latinToCyrillicRussianImpl,
 } from "./russian/translit.js";
@@ -41,7 +45,7 @@ import {
 
 /**
  * @name cyrillicBulgarianToLatin
- * @description Convert Cyrillic⟶Latin text using Bulgarian flavour (BGN/PCGN 2013)
+ * @description Convert Cyrillic⟶Latin text using Bulgarian flavor (BGN/PCGN 2013)
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -53,7 +57,7 @@ export function cyrillicBulgarianToLatin(cyrillicText: string): string {
 
 /**
  * @name cyrillicSerbianToLatin
- * @description Convert Cyrillic⟶Latin text using Serbian flavour (national standard)
+ * @description Convert Cyrillic⟶Latin text using Serbian flavor (national standard)
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -65,7 +69,7 @@ export function cyrillicSerbianToLatin(cyrillicText: string): string {
 
 /**
  * @name cyrillicMacedonianToLatin
- * @description Convert Cyrillic⟶Latin text using Macedonian flavour (national standard)
+ * @description Convert Cyrillic⟶Latin text using Macedonian flavor (national standard)
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -77,7 +81,7 @@ export function cyrillicMacedonianToLatin(cyrillicText: string): string {
 
 /**
  * @name cyrillicUzbekToLatin
- * @description Convert Cyrillic⟶Latin text using Uzbek flavour (national standard)
+ * @description Convert Cyrillic⟶Latin text using Uzbek flavor (national standard)
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -89,7 +93,7 @@ export function cyrillicUzbekToLatin(cyrillicText: string): string {
 
 /**
  * @name cyrillicMongolianToLatin
- * @description Convert Cyrillic⟶Latin text using Mongolian flavour (national standard)
+ * @description Convert Cyrillic⟶Latin text using Mongolian flavor (national standard)
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -101,7 +105,7 @@ export function cyrillicMongolianToLatin(cyrillicText: string): string {
 
 /**
  * @name cyrillicBelarusianToLatin
- * @description Convert Cyrillic⟶Latin text using Belarusian flavour
+ * @description Convert Cyrillic⟶Latin text using Belarusian flavor
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -113,7 +117,7 @@ export function cyrillicBelarusianToLatin(cyrillicText: string): string {
 
 /**
  * @name cyrillicRussianToLatin
- * @description Convert Cyrillic⟶Latin text using Russian flavour
+ * @description Convert Cyrillic⟶Latin text using Russian flavor
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -137,7 +141,7 @@ export function cyrillicToLatinUnicode(cyrillicText: string): string {
 
 /**
  * @name cyrillicUkrainianToLatin
- * @description Convert Cyrillic⟶Latin text using Ukrainian flavour
+ * @description Convert Cyrillic⟶Latin text using Ukrainian flavor
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -148,8 +152,20 @@ export function cyrillicUkrainianToLatin(cyrillicText: string): string {
 //---
 
 /**
+ * @name ukrainianCyrillicToLatynka
+ * @description Converts Ukrainian Cyrillic to proposal project Gajica Latynka (Lossless).
+ * @param {string} cyrillicText
+ * @returns {string}
+ */
+export function ukrainianCyrillicToLatynka(cyrillicText: string): string {
+  return ukrainianCyrillicToLatynkaImpl(cyrillicText);
+}
+
+//---
+
+/**
  * @name cyrillicKazakhToLatin
- * @description Convert Cyrillic⟶Latin text using Kazakh flavour (BGN/PCGN 1979)
+ * @description Convert Cyrillic⟶Latin text using Kazakh flavor (BGN/PCGN 1979)
  * @param {string} cyrillicText
  * @returns {string}
  */
@@ -173,7 +189,7 @@ export function latinToCyrillicBulgarian(latinText: string): string {
 
 /**
  * @name latinToCyrillicSerbian
- * @description Convert Latin⟶Cyrillic text using Serbian flavour (national standard)
+ * @description Convert Latin⟶Cyrillic text using Serbian flavor (national standard)
  * @param {string} latinText
  * @returns {string}
  */
@@ -185,7 +201,7 @@ export function latinToCyrillicSerbian(latinText: string): string {
 
 /**
  * @name latinToCyrillicMacedonian
- * @description Convert Latin⟶Cyrillic text using Macedonian flavour (national standard)
+ * @description Convert Latin⟶Cyrillic text using Macedonian flavor (national standard)
  * @param {string} latinText
  * @returns {string}
  */
@@ -197,7 +213,7 @@ export function latinToCyrillicMacedonian(latinText: string): string {
 
 /**
  * @name latinToCyrillicUzbek
- * @description Convert Latin⟶Cyrillic text using Uzbek flavour (national standard)
+ * @description Convert Latin⟶Cyrillic text using Uzbek flavor (national standard)
  * @param {string} latinText
  * @returns {string}
  */
@@ -209,7 +225,7 @@ export function latinToCyrillicUzbek(latinText: string): string {
 
 /**
  * @name latinToCyrillicMongolian
- * @description Convert Latin⟶Cyrillic text using Mongolian flavour (national standard)
+ * @description Convert Latin⟶Cyrillic text using Mongolian flavor (national standard)
  * @param {string} latinText
  * @returns {string}
  */
@@ -221,7 +237,7 @@ export function latinToCyrillicMongolian(latinText: string): string {
 
 /**
  * @name latinToCyrillicBelarusian
- * @description Convert Latin⟶Cyrillic text using Belarusian flavour
+ * @description Convert Latin⟶Cyrillic text using Belarusian flavor
  * @param {string} latinText
  * @returns {string}
  */
@@ -233,7 +249,7 @@ export function latinToCyrillicBelarusian(latinText: string): string {
 
 /**
  * @name latinToCyrillicRussian
- * @description Convert Latin⟶Cyrillic text using Russian flavour
+ * @description Convert Latin⟶Cyrillic text using Russian flavor
  * @param {string} latinText
  * @returns {string}
  */
@@ -245,7 +261,7 @@ export function latinToCyrillicRussian(latinText: string): string {
 
 /**
  * @name latinToCyrillicUkrainian
- * @description Convert Latin⟶Cyrillic text using Ukrainian flavour
+ * @description Convert Latin⟶Cyrillic text using Ukrainian flavor
  * @param {string} latinText
  * @returns {string}
  */
@@ -256,8 +272,20 @@ export function latinToCyrillicUkrainian(latinText: string): string {
 //---
 
 /**
+ * @name ukrainianLatynkaToCyrillic
+ * @description Converts proposal project Gajica Latynka back to Cyrillic (Lossless).
+ * @param {string} latinText
+ * @returns {string}
+ */
+export function ukrainianLatynkaToCyrillic(latinText: string): string {
+  return ukrainianLatynkaToCyrillicImpl(latinText);
+}
+
+//---
+
+/**
  * @name latinToCyrillicKazakh
- * @description Convert Latin⟶Cyrillic text using Kazakh flavour (BGN/PCGN 1979)
+ * @description Convert Latin⟶Cyrillic text using Kazakh flavor (BGN/PCGN 1979)
  * @param {string} latinText
  * @returns {string}
  */

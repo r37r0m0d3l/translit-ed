@@ -11,6 +11,7 @@
   ],
   "description": "🇧🇾 🇧🇬 🇰🇿 🇲🇰 🇲🇳 🇷🇺 🇷🇸 🇺🇦 🇺🇿 Aggregator of various Cyrillic transliteration methods.",
   "devDependencies": {
+    "@types/node": "^25.5.0",
     "prettier": "^3.8.1",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
@@ -33,10 +34,14 @@
     }
   },
   "files": [
+    "dist/cli.js",
     "dist/translit-ed.d.ts",
     "dist/translit-ed.js",
     "dist/translit-ed.js.map"
   ],
+  "bin": {
+    "translit-ed": "./dist/cli.js"
+  },
   "homepage": "https://github.com/r37r0m0d3l/translit-ed#readme",
   "keywords": [
     "ascii",
@@ -68,13 +73,18 @@
     "url": "git+https://github.com/r37r0m0d3l/translit-ed.git"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --sourcemap --clean --minify --treeshake --entry.translit-ed src/index.ts",
-    "dev": "tsup src/index.ts --format esm --watch --dts",
+    "build": "tsup src/index.ts src/cli.ts --format esm --dts --sourcemap --clean --minify --treeshake --entry.translit-ed src/index.ts --entry.cli src/cli.ts",
+    "dev": "tsup src/index.ts src/cli.ts --format esm --watch --dts",
     "package:upgrade": "npx npm-check --update",
     "prepublishOnly": "npm run build",
-    "test": "node --test ./test/index.test.js"
+    "test": "node --test ./test/index.test.js",
+    "test:cli": "node ./dist/cli.js",
+    "test:cli:ru-cyr2lat": "node ./dist/cli.js -ru-cyr2lat \"Текст на русском\"",
+    "test:cli:ua-gajica-cyr2lat": "node ./dist/cli.js -ua-gajica-cyr2lat \"Текст Українською Гаєвиця\"",
+    "test:cli:unicode-cyr2lat": "node ./dist/cli.js -unicode-cyr2lat \"Текст на български\"",
+    "test:translator": "node --test test/ukrainian_latynka_gajica.test.js"
   },
   "type": "module",
   "types": "./dist/translit-ed.d.ts",
-  "version": "2.0.0"
+  "version": "2.0.1"
 }

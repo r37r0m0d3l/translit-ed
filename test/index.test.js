@@ -12,6 +12,8 @@ import {
   cyrillicUzbekToLatin,
   cyrillicToLatinUnicode,
   cyrillicUkrainianToLatin,
+  ukrainianCyrillicToLatynka,
+  ukrainianLatynkaToCyrillic,
   latinToCyrillicBelarusian,
   latinToCyrillicBulgarian,
   latinToCyrillicKazakh,
@@ -54,6 +56,12 @@ describe("Imported functions", () => {
   });
   it("cyrillicUkrainianToLatin", () => {
     expect(typeof cyrillicUkrainianToLatin, "function");
+  });
+  it("ukrainianCyrillicToLatynka", () => {
+    expect(typeof ukrainianCyrillicToLatynka, "function");
+  });
+  it("ukrainianLatynkaToCyrillic", () => {
+    expect(typeof ukrainianLatynkaToCyrillic, "function");
   });
   it("latinToCyrillicBelarusian", () => {
     expect(typeof latinToCyrillicBelarusian, "function");
@@ -562,5 +570,11 @@ describe("🇺🇦 Ukrainian", () => {
       latinToCyrillicUkrainian("Ye yunyi yizhak, gudzyk i hilka v yaru."),
       "Є юний їжак, ґудзик і гілка в яру.",
     );
+  });
+  it("ukrainianCyrillicToLatynka", () => {
+    expect(ukrainianCyrillicToLatynka("Міль"), "Milj");
+  });
+  it("ukrainianLatynkaToCyrillic", () => {
+    expect(ukrainianLatynkaToCyrillic("Milj"), "Міль");
   });
 });
