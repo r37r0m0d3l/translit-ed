@@ -1,5 +1,11 @@
 # 📝 Changelog
 
+[2.0.2]
+
+# 🐞 Fixed
+
+* 🏗️ Optimized a build process: disabled code splitting to avoid shared chunks (like `chunk-*.js`).
+
 [2.0.1]
 
 # ✨ Added

@@ -73,7 +73,7 @@
     "url": "git+https://github.com/r37r0m0d3l/translit-ed.git"
   },
   "scripts": {
-    "build": "tsup src/index.ts src/cli.ts --format esm --dts --sourcemap --clean --minify --treeshake --entry.translit-ed src/index.ts --entry.cli src/cli.ts",
+    "build": "tsup src/index.ts src/cli.ts --format esm --dts --sourcemap --clean --minify --treeshake --entry.translit-ed src/index.ts --entry.cli src/cli.ts --splitting false && node -e \"import { rmSync } from 'node:fs'; try { rmSync('dist/cli.d.ts'); rmSync('dist/cli.js.map'); } catch (e) {}\"",
     "dev": "tsup src/index.ts src/cli.ts --format esm --watch --dts",
     "package:upgrade": "npx npm-check --update",
     "prepublishOnly": "npm run build",
@@ -86,5 +86,5 @@
   },
   "type": "module",
   "types": "./dist/translit-ed.d.ts",
-  "version": "2.0.1"
+  "version": "2.0.2"
 }
