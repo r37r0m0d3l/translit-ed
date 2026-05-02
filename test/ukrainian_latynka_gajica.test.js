@@ -44,3 +44,7 @@ test("Ukrainian Gajica: Normalize Latin i-lookalikes to Cyrillic", () => {
   assert.strictEqual(lat, "iIjiJi");
   assert.strictEqual(back, "іІїЇ");
 });
+
+test("Ukrainian Gajica: Preserve all-caps single-letter words in all-caps context", () => {
+  assert.strictEqual(ukrainianCyrillicToLatynka("Є İНШИЙ"), "JE INŠYJ");
+});

@@ -597,6 +597,7 @@ describe("🇺🇦 Ukrainian", () => {
   });
   it("ukrainianCyrillicToLatynka", () => {
     expect(ukrainianCyrillicToLatynka("Міль"), "Milj");
+    expect(ukrainianCyrillicToLatynka("Є İНШИЙ"), "JE INŠYJ");
   });
   it("ukrainianLatynkaToCyrillic", () => {
     expect(ukrainianLatynkaToCyrillic("Milj"), "Міль");

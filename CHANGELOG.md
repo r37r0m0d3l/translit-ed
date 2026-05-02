@@ -1,5 +1,11 @@
 # 📝 Changelog
 
+[2.0.4]
+
+# 🐞 Fixed
+
+* 🔠 Fixed more uppercase-word transliteration cases for multi-letter mappings across language converters.
+
 [2.0.3]
 
 # 🐞 Fixed
