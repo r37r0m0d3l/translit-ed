@@ -82,7 +82,33 @@ export function ukrainianCyrillicToLatynka(text: string): string {
   const keys = Object.keys(map).sort((a, b) => b.length - a.length);
   const regex = new RegExp(keys.map((k) => k.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")).join("|"), "g");
 
-  return text.replace(regex, (matched) => map[matched]!);
+  const isCyrillicLetter = (char: string): boolean => /[\u0400-\u04FF]/.test(char);
+  const isUppercaseCyrillicWordAt = (source: string, index: number): boolean => {
+    let start = index;
+    let end = index;
+
+    while (start > 0 && isCyrillicLetter(source[start - 1] ?? "")) {
+      start--;
+    }
+    while (end < source.length && isCyrillicLetter(source[end] ?? "")) {
+      end++;
+    }
+
+    const word = source.slice(start, end);
+    return word.length > 0 && word === word.toUpperCase();
+  };
+
+  return text.replace(regex, (matched, index, fullText) => {
+    const mapped = map[matched]!;
+    const isUpperCyrChar = matched.length === 1 && matched === matched.toUpperCase() && matched !== matched.toLowerCase();
+
+    // Preserve all-caps words by uppercasing full digraphs like Ju -> JU, Ja -> JA.
+    if (isUpperCyrChar && isUppercaseCyrillicWordAt(fullText, index) && mapped.length > 1) {
+      return mapped.toUpperCase();
+    }
+
+    return mapped;
+  });
 }
 
 /**
