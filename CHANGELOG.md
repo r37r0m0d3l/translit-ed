@@ -1,5 +1,23 @@
 # 📝 Changelog
 
+[2.0.3]
+
+# 🐞 Fixed
+
+* 🔠 Fixed uppercase-word transliteration for multi-letter mappings across language converters (for example: `Ju` -> `JU`, `Ja` -> `JA`, `Shch` -> `SHCH` in ALL CAPS contexts).
+
+* 🇺🇦 Fixed Ukrainian Gajica handling of Latin lookalike i-characters by normalizing `i`, `i̇`, `İ`, `ï`, `Ï` into Cyrillic `і/І/ї/Ї` before transliteration.
+
+# 🔧 Changed
+
+* 🧰 Extracted Cyrillic uppercase word detection.
+
+# ✅ Tests
+
+* Added regression tests for uppercase digraph/trigraph behavior in uppercase words across supported language transliterators.
+
+* Added a dedicated Ukrainian Gajica test for Latin lookalike i-character normalization and round-trip conversion.
+
 [2.0.2]
 
 # 🐞 Fixed

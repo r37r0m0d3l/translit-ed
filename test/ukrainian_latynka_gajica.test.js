@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { ukrainianCyrillicToLatynka, ukrainianLatynkaToCyrillic } from "../src/ukrainian/latynka_gajica.func.ts";
+import { ukrainianCyrillicToLatynka, ukrainianLatynkaToCyrillic } from "../dist/translit-ed.js";
 
 test("Ukrainian Gajica: Official Lossless Round-trip", async (t) => {
   const testCases = [
@@ -34,4 +34,13 @@ test("Contextual Integrity: RPG Dialogue", () => {
   const back = ukrainianLatynkaToCyrillic(lat);
 
   assert.strictEqual(back, original);
+});
+
+test("Ukrainian Gajica: Normalize Latin i-lookalikes to Cyrillic", () => {
+  const mixed = "iİïÏ";
+  const lat = ukrainianCyrillicToLatynka(mixed);
+  const back = ukrainianLatynkaToCyrillic(lat);
+
+  assert.strictEqual(lat, "iIjiJi");
+  assert.strictEqual(back, "іІїЇ");
 });

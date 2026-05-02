@@ -177,7 +177,7 @@ export function cyrillicKazakhToLatin(cyrillicText: string): string {
 
 /**
  * @name latinToCyrillicBulgarian
- * @description Convert Latin⟶Cyrillic text using Bulgarian flavour (BGN/PCGN 2013)
+ * @description Convert Latin⟶Cyrillic text using Bulgarian flavor (BGN/PCGN 2013)
  * @param {string} latinText
  * @returns {string}
  */

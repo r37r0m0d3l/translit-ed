@@ -1,11 +1,37 @@
+import { isUppercaseCyrillicWordAt } from "../generic/cyrillicCase.js";
+
 /**
  * @name ukrainianCyrillicToLatynka
  * @description Converts Ukrainian Cyrillic to proposal project Gajica Latynka (Lossless).
+ * @summary Converts Ukrainian Cyrillic to Gajica Latynka and normalizes Latin lookalike characters (i, i̇, İ, ï, Ï) to Cyrillic і/І/ї/Ї before transliteration.
  * @param {string} text - Cyrillic text to convert.
  * @returns {string} - Converted Latynka text.
  * @since 2.0.1
  */
 export function ukrainianCyrillicToLatynka(text: string): string {
+  const normalizedText = text
+    // Visual homoglyphs (Latin -> Cyrillic)
+    .replace(/e/g, "е")
+    .replace(/o/g, "о")
+    .replace(/a/g, "а")
+    .replace(/c/g, "с")
+    .replace(/x/g, "х")
+    .replace(/p/g, "р")
+    .replace(/y/g, "у")
+    .replace(/E/g, "Е")
+    .replace(/O/g, "О")
+    .replace(/A/g, "А")
+    .replace(/C/g, "С")
+    .replace(/X/g, "Х")
+    .replace(/P/g, "Р")
+    .replace(/Y/g, "У")
+    // Existing i-lookalike normalization
+    .replace(/i\u0307/g, "і")
+    .replace(/İ/g, "І")
+    .replace(/i/g, "і")
+    .replace(/Ï/g, "Ї")
+    .replace(/ï/g, "ї");
+
   const map: Record<string, string> = {
     "Щ": "Šč",
     "щ": "šč",
@@ -82,23 +108,7 @@ export function ukrainianCyrillicToLatynka(text: string): string {
   const keys = Object.keys(map).sort((a, b) => b.length - a.length);
   const regex = new RegExp(keys.map((k) => k.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")).join("|"), "g");
 
-  const isCyrillicLetter = (char: string): boolean => /[\u0400-\u04FF]/.test(char);
-  const isUppercaseCyrillicWordAt = (source: string, index: number): boolean => {
-    let start = index;
-    let end = index;
-
-    while (start > 0 && isCyrillicLetter(source[start - 1] ?? "")) {
-      start--;
-    }
-    while (end < source.length && isCyrillicLetter(source[end] ?? "")) {
-      end++;
-    }
-
-    const word = source.slice(start, end);
-    return word.length > 0 && word === word.toUpperCase();
-  };
-
-  return text.replace(regex, (matched, index, fullText) => {
+  return normalizedText.replace(regex, (matched, index, fullText) => {
     const mapped = map[matched]!;
     const isUpperCyrChar = matched.length === 1 && matched === matched.toUpperCase() && matched !== matched.toLowerCase();
 

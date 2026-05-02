@@ -1,3 +1,5 @@
+import { isUppercaseCyrillicWordAt } from "../generic/cyrillicCase.js";
+
 const cyrillicToLatinMap = new Map<string, string>([
   ["а", "a"],
   ["ә", "ä"],
@@ -119,7 +121,12 @@ export function cyrillicToLatinKazakh(cyrillicText: string): string {
   let latin = "";
   for (let index = 0; index < normalized.length; index++) {
     const char = normalized[index] ?? "";
-    latin += mapCyrillicChar(char);
+    const mapped = mapCyrillicChar(char);
+    if (mapped.length > 1 && char === char.toUpperCase() && char !== char.toLowerCase() && isUppercaseCyrillicWordAt(normalized, index)) {
+      latin += mapped.toUpperCase();
+    } else {
+      latin += mapped;
+    }
   }
   return latin;
 }

@@ -151,6 +151,9 @@ describe("🇧🇾 Belarusian", () => {
   it("latinToCyrillicBelarusian", () => {
     expect(latinToCyrillicBelarusian("Ja i Jura ŭ Minsku."), "Я і Юра ў Мінску.");
   });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicBelarusianToLatin("ЮЧЯ ЕЖ"), "JUCHIA JEZH");
+  });
 });
 
 describe("🇧🇬 Bulgarian", () => {
@@ -198,6 +201,9 @@ describe("🇧🇬 Bulgarian", () => {
   it("latinToCyrillicBulgarian", () => {
     expect(latinToCyrillicBulgarian("Shtastie e v gyola."), "Щастие е в гьола.");
   });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicBulgarianToLatin("ЮЯЩ"), "YUYASHT");
+  });
 });
 
 describe("🇷🇸 Serbian", () => {
@@ -243,6 +249,9 @@ describe("🇷🇸 Serbian", () => {
   });
   it("latinToCyrillicSerbian", () => {
     expect(latinToCyrillicSerbian("Njegova džez ploča."), "Његова џез плоча.");
+  });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicSerbianToLatin("ЉУБЉАНА ЊЕГОШ ЏЕЗ"), "LJUBLJANA NJEGOŠ DŽEZ");
   });
 });
 
@@ -290,6 +299,9 @@ describe("🇲🇰 Macedonian", () => {
   });
   it("latinToCyrillicMacedonian", () => {
     expect(latinToCyrillicMacedonian("Kjutiot gjavol svira džez."), "Ќутиот ѓавол свира џез.");
+  });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicMacedonianToLatin("ЃОРЃИ ЅИД ЉУБОВ"), "GJORGJI DZID LJUBOV");
   });
 });
 
@@ -342,6 +354,9 @@ describe("🇲🇳 Mongolian", () => {
   it("latinToCyrillicMongolian", () => {
     expect(latinToCyrillicMongolian("Öndör üültey ödör."), "Өндөр үүлтей өдөр.");
   });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicMongolianToLatin("ЮРТ ХОТ"), "YURT KHOT");
+  });
 });
 
 describe("🇺🇿 Uzbek", () => {
@@ -393,6 +408,9 @@ describe("🇺🇿 Uzbek", () => {
   });
   it("latinToCyrillicUzbek", () => {
     expect(latinToCyrillicUzbek("G'oz va o'zbekcha so'z."), "Ғоз ва ўзбекча сўз.");
+  });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicUzbekToLatin("ЮЛДУЗ ЯХШИ ЧОЙ"), "YULDUZ YAXSHI CHOY");
   });
 });
 
@@ -455,6 +473,9 @@ describe("🇷🇺 Russian", () => {
       "Съешь же ещё этих мягких французских булок, да выпей чаю.",
     );
   });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicRussianToLatin("ЮЛИЯ ЩУКА"), "YULIYA SHCHUKA");
+  });
 });
 
 describe("🇰🇿 Kazakh (Cyrillic)", () => {
@@ -509,6 +530,9 @@ describe("🇰🇿 Kazakh (Cyrillic)", () => {
     for (const [input, output] of cases) {
       expect(cyrillicKazakhToLatin(input), output);
     }
+  });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicKazakhToLatin("ЮЩЯ ҒАҢ"), "YUSHCHYA GHANG");
   });
 });
 
@@ -576,5 +600,8 @@ describe("🇺🇦 Ukrainian", () => {
   });
   it("ukrainianLatynkaToCyrillic", () => {
     expect(ukrainianLatynkaToCyrillic("Milj"), "Міль");
+  });
+  it("uppercase digraphs in uppercase words", () => {
+    expect(cyrillicUkrainianToLatin("ЮЛІЯ ЩАСТЯ"), "YULIYA SHCHASTIA");
   });
 });

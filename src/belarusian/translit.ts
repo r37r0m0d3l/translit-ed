@@ -1,3 +1,5 @@
+import { isUppercaseCyrillicWordAt } from "../generic/cyrillicCase.js";
+
 const baseMap = new Map<string, string>([
   ["а", "a"],
   ["б", "b"],
@@ -35,7 +37,7 @@ const baseMap = new Map<string, string>([
 ]);
 
 const vowels = new Set(["а", "е", "ё", "і", "о", "у", "ў", "ы", "э", "ю", "я"]);
-const boundaryChars = new Set([" ", "\n", "\t", ".", ",", "!", "?", ":", ";", "(", ")", "-", "—", "–", "\"", "«", "»"]);
+const boundaryChars = new Set([" ", "\n", "\t", ".", ",", "!", "?", ":", ";", "(", ")", "-", "—", "–", '"', "«", "»"]);
 const apostrophes = new Set(["'", "’", "ʼ"]);
 
 function applyCasing(source: string, mapped: string): string {
@@ -97,7 +99,17 @@ export function cyrillicToLatinBelarusian(cyrillicText: string): string {
       prevLetter = "";
       continue;
     }
-    latin += applyCasing(char, mapped);
+    const cased = applyCasing(char, mapped);
+    if (
+      cased.length > 1 &&
+      char === char.toUpperCase() &&
+      char !== char.toLowerCase() &&
+      isUppercaseCyrillicWordAt(normalized, index)
+    ) {
+      latin += cased.toUpperCase();
+    } else {
+      latin += cased;
+    }
     prevIsBoundary = false;
     prevLetter = lower;
   }
