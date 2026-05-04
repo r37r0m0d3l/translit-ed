@@ -8,6 +8,12 @@
 
 This package provides **language-aware, standard-based transliteration** for Cyrillic scripts:
 
+---
+
+[Try transliteration on website →](https://r37r0m0d3l.github.io/translit-ed/)
+
+---
+
 |                 |                 |                |
 |-----------------|-----------------|----------------|
 | 🇧🇾 Belarusian | 🇲🇰 Macedonian | 🇷🇸 Serbian   |

@@ -203,3 +203,13 @@ toSelect.addEventListener("change", () => {
 });
 window.addEventListener("pagehide", persistSourceText);
 renderResult();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", async () => {
+    try {
+      await navigator.serviceWorker.register(new URL("./service-worker.js", import.meta.url).href);
+    } catch (error) {
+      console.error("Failed to register service worker.", error);
+    }
+  });
+}
