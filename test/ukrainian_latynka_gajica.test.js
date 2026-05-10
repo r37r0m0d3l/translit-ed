@@ -8,10 +8,16 @@ test("Ukrainian Gajica: Official Lossless Round-trip", async (t) => {
     { cyr: "Мій", lat: "Mij", desc: "Short I (й) -> j" },
     { cyr: "Щедрий", lat: "Ščedryj", desc: "Digraph Щ (šč) and end Й (j)" },
     { cyr: "Яблуко", lat: "Jabluko", desc: "Iotated Я (ja) at start" },
+    {
+      cyr: "Я БУВ ЗАЙНЯТИЙ ОСТАННІМ ЧАСОМ",
+      lat: "JA BUV ZAJNJATYJ OSTANNIM ČASOM",
+      desc: "All-caps single-letter Я stays fully uppercased in all-caps context",
+    },
     { cyr: "Київ", lat: "Kyjiv", desc: "Special Yi (ї) -> ji" },
     { cyr: "Сільський", lat: "Siljsjkyj", desc: "Multiple softness markers" },
     { cyr: "Юрій", lat: "Jurij", desc: "Iotated Ю (ju) and end Й (j)" },
     { cyr: "ПАЛЯНИЦЯ", lat: "PALJANYCJA", desc: "Upper case preservation" },
+    { cyr: "ЇХ СПРАВИ", lat: "JIX SPRAVY", desc: "All-caps Ї (Ji digraph) is fully uppercased to JI" },
   ];
 
   for (const { cyr, lat, desc } of testCases) {

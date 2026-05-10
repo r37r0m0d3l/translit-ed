@@ -4,7 +4,12 @@
 
 # 🐞 Fixed
 
+* 🇺🇦 Fixed `ukrainianCyrillicToLatynka`: added `NFC` Unicode normalization so that `Ї` in decomposed form (І + combining diaeresis) is correctly converted to `JI` in all-cap word context instead of being passed through unchanged.
 * 🔠 Fixed more uppercase-word transliteration cases for multi-letter mappings across language converters.
+
+# ✅ Tests
+
+* Added regression test: `ЇХ СПРАВИ` → `JIX SPRAVY` (all-caps `Ї` digraph fully uppercased).
 
 [2.0.3]
 

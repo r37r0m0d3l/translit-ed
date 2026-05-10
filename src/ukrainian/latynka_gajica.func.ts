@@ -10,6 +10,8 @@ import { isUppercaseCyrillicWordAt } from "../generic/cyrillicCase.js";
  */
 export function ukrainianCyrillicToLatynka(text: string): string {
   const normalizedText = text
+    // Ensure precomposed Unicode form (e.g., Ї as U+0407, not І + combining diaeresis)
+    .normalize("NFC")
     // Visual homoglyphs (Latin -> Cyrillic)
     .replace(/e/g, "е")
     .replace(/o/g, "о")
