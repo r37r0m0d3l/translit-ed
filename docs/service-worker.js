@@ -1,4 +1,5 @@
-const CACHE_NAME = "translit-ed-v1";
+const VERSION = "v2.0.4"; // Change this to trigger an update.
+const CACHE_NAME = `translit-ed-${VERSION}`;
 const APP_SHELL_URL = new URL("./", self.location).toString();
 const PRECACHE_URLS = [
   APP_SHELL_URL,
@@ -37,6 +38,12 @@ self.addEventListener("activate", (event) => {
       await self.clients.claim();
     })(),
   );
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data?.type === "GET_VERSION") {
+    event.source.postMessage({ type: "SW_VERSION", version: VERSION });
+  }
 });
 
 self.addEventListener("fetch", (event) => {

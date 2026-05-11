@@ -205,9 +205,36 @@ window.addEventListener("pagehide", persistSourceText);
 renderResult();
 
 if ("serviceWorker" in navigator) {
+  const swVersionStorageKey = "translit-ed-sw-version";
+  let isSwUpdating = false;
+
+  navigator.serviceWorker.addEventListener("message", (event) => {
+    if (event.data?.type !== "SW_VERSION") return;
+    const newVersion = event.data.version;
+    const prevVersion = preferredStorage?.getItem(swVersionStorageKey);
+    if (isSwUpdating && prevVersion && prevVersion !== newVersion) {
+      window.gtag?.("event", "pwa_update_installed", {
+        old_version: prevVersion,
+        new_version: newVersion,
+      });
+    } else if (!isSwUpdating) {
+      window.gtag?.("event", "pwa_info", { pwa_version: newVersion });
+    }
+    preferredStorage?.setItem(swVersionStorageKey, newVersion);
+    if (isSwUpdating) {
+      window.location.reload();
+    }
+  });
+
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    isSwUpdating = true;
+    navigator.serviceWorker.controller?.postMessage({ type: "GET_VERSION" });
+  });
+
   window.addEventListener("load", async () => {
     try {
       await navigator.serviceWorker.register(new URL("./service-worker.js", import.meta.url).href);
+      navigator.serviceWorker.controller?.postMessage({ type: "GET_VERSION" });
     } catch (error) {
       console.error("Failed to register service worker.", error);
     }
